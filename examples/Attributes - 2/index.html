@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Example</title>
+</head>
+
+<body>
+    <header>Header</header>
+    <main>
+        <p class="paragraph">Paragraph 1</p>
+        <p class="paragraph">Paragraph 2</p>
+        <p class="paragraph">Paragraph 3</p>
+        <p class="paragraph">Paragraph 4</p>
+        <p class="paragraph">Paragraph 5</p>
+    </main>
+
+    <script src="../../appropriate.dev.js"></script>
+    <script>
+        select(document).onready(() => {
+
+            const paragraphs=select('.paragraph')
+
+            select('.paragraph').attribute('name',"alex")
+
+            for(let paragraph of paragraphs) {
+                console.log(select(paragraph).attribute("name"))
+            }
+
+        })
+    </script>
+</body>
+
+</html>

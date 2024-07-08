@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Controls Example</title>
+</head>
+
+<body>
+    <header>Header</header>
+    <main>
+        <p class="paragraph">Paragraph 1</p>
+        <p class="paragraph">Paragraph 2</p>
+        <p class="paragraph">Paragraph 3</p>
+        <p class="paragraph">Paragraph 4</p>
+        <p class="paragraph">Paragraph 5</p>
+    </main>
+
+    <script src="../../appropriate.dev.js"></script>
+    <script>
+        select(document).onready(() => {
+
+            select('.paragraph').append("<i> Append </i>")
+
+            select('.paragraph').prepend("<i> Prepend </i>")
+
+            select('.paragraph').get(0).prepend("0 --> ")
+
+            select('.paragraph').first().before("<p> Paragraph 0 </p>")
+
+            select('p:last-child').after("<h1>After</h1>")
+
+            select('p').first().before("<h1>Before</h1>")
+
+        })
+    </script>
+</body>
+
+</html>

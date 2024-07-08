@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Example</title>
+    <style>
+        p {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Header</header>
+    <main>
+        <p class="paragraph">Paragraph 1</p>
+        <p class="paragraph">Paragraph 2</p>
+        <p class="paragraph">Paragraph 3</p>
+        <p class="paragraph">Paragraph 4</p>
+        <p class="paragraph">Paragraph 5</p>
+    </main>
+
+    <button id="flybutton">The button can fly!</button>
+
+    <script src="../../appropriate.dev.js"></script>
+    <script>
+        select(document).onready(() => {
+
+            select(document).listen('click','p',(event) => {
+
+                const target=select(event.target)
+
+                if(Math.random()<0.5) {
+                    target.slideUp(500, () => {
+                        target.slideDown(500)
+                    })
+                } else {
+                    target.fadeOut(500, () => {
+                        target.fadeIn(500)
+                    })
+                }
+            })
+
+            const flyButton=select('#flybutton')
+
+            flyButton.onclick((event) => {
+                // animate(properties: Object, durationInMS?: string | number, callback?: Function)
+                flyButton.style("position","absolute").animate({
+                    opacity: 0,
+                    left: '800px'
+                },500,() => {
+                    flyButton.remove()
+                    select('main').after("Animation complete!")
+                })
+            })
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Example</title>
+</head>
+
+<body>
+    <header>Header</header>
+    <main>
+        <p class="paragraph">Paragraph 1</p>
+        <p class="paragraph">Paragraph 2</p>
+        <p class="paragraph">Paragraph 3</p>
+        <p class="paragraph">Paragraph 4</p>
+        <p class="paragraph">Paragraph 5</p>
+    </main>
+
+    <script src="../../appropriate.dev.js"></script>
+    <script>
+        select(document).onready(() => {
+            select('header').html('<h1>Appropriate.js comes alive!<h1>')
+
+            const main=select('main')
+            console.log(main.html().trim())
+
+            const paragraphs=select('.paragraph')
+
+            console.log(main.children())
+
+            for(let paragraph of paragraphs) {
+                console.log("==============================")
+                console.log("prev: "+select(paragraph).prev().text())
+                console.log("current: "+select(paragraph).text())
+                console.log("next: "+select(paragraph).next().text())
+            }
+
+        })
+    </script>
+</body>
+
+</html>

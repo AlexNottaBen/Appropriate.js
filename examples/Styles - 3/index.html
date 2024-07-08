@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styles Example</title>
+    <style>
+        .red-alert {
+            background-color: red;
+            border: 2px solid darkred;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Header</header>
+    <main>
+        <p class="paragraph">Paragraph 1</p>
+        <p class="paragraph">Paragraph 2</p>
+        <p class="paragraph">Paragraph 3</p>
+        <p class="paragraph">Paragraph 4</p>
+        <p class="paragraph">Paragraph 5</p>
+    </main>
+
+    <script src="../../appropriate.dev.js"></script>
+    <script>
+        select(document).onready(() => {
+
+            const paragraphs=select('.paragraph')
+
+            select('.paragraph').addClass("red-alert")
+
+            for(let paragraph of paragraphs) {
+                if(Math.random()<0.5) {
+                    select(paragraph).style("background-color","blue").style("border-color","darkblue")
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
