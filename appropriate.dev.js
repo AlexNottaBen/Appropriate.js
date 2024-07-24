@@ -1,5 +1,5 @@
 /*!
- * Appropriate.js JavaScript Library v1.0.0
+ * Appropriate.js JavaScript Library v1.1.0
  * https://github.com/AlexNottaBen/Appropriate.js
  *
  * Copyright AlexNottaBen
@@ -9,7 +9,23 @@
 
 "use strict";
 
+/**
+ * The central class of the library, which is a collection of HTML objects
+ * obtained through a CSS selector. It has the necessary methods for convenient
+ * work with them.
+ *
+ * @class AppropriateObject
+ * @extends {Array}
+ */
 class AppropriateObject extends Array {
+    /**
+     * A method that will execute the passed function when
+     * the DOM is fully loaded.
+     *
+     * @param {Function} callback - A Function to be executed.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     onready(callback) {
         this.forEach((element) => {
             element.addEventListener("DOMContentLoaded", callback);
@@ -17,6 +33,14 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Bind an event handler to the "load" event.
+     *
+     * @param {Function} callback - A function that will be triggered
+     * by an event.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     onload(callback) {
         this.forEach((element) => {
             element.addEventListener("load", callback);
@@ -24,6 +48,14 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Bind an event handler to the "click" event.
+     *
+     * @param {Function} callback - A function that will be triggered
+     * by an event.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     onclick(callback) {
         this.forEach((element) => {
             element.addEventListener("click", callback);
@@ -31,6 +63,14 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Bind an event handler to the "mouseover" event.
+     *
+     * @param {Function} callback - A function that will be triggered
+     * by an event.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     onmouseover(callback) {
         this.forEach((element) => {
             element.addEventListener("mouseover", callback);
@@ -38,6 +78,14 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Bind an event handler to the "mouseout" event.
+     *
+     * @param {Function} callback - A function that will be triggered
+     * by an event.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     onmouseout(callback) {
         this.forEach((element) => {
             element.addEventListener("mouseout", callback);
@@ -45,6 +93,15 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Bind an event handler to the "submit" event.
+     * Especially useful for forms.
+     *
+     * @param {Function} callback - A function that will be triggered.
+     * by an event.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     onsubmit(callback) {
         this.forEach((element) => {
             element.addEventListener("submit", callback);
@@ -52,6 +109,15 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Bind an event handler to the event that is passed to the function.
+     *
+     * @param {Event} event - The event that is passed to the function.
+     * @param {Function} callback - A function that will be triggered.
+     * by an event
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     on(event, callback) {
         this.forEach((element) => {
             element.addEventListener(event, callback);
@@ -59,6 +125,17 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Bind an event handler to HTML objects using a CSS selector.
+     *
+     * @param {Event} event - The event that is passed to the function.
+     * @param {String} selector - The CSS selector that is passed to the
+     * function.
+     * @param {Function} callback - A function that will be triggered.
+     * by an event
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     listen(event, selector, callback) {
         this.forEach((element) => {
             element.addEventListener(event, (e) => {
@@ -70,10 +147,51 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Blur HTML objects.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
+    blur() {
+        this.forEach((element) => {
+            element.blur()
+        });
+        return this;
+    }
+
+    /**
+     * Focus HTML objects.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
+    focus() {
+        this.forEach((element) => {
+            element.focus()
+        });
+        return this;
+    }
+
+    /**
+     * Get HTML object from collection by index or undefined.
+     *
+     * @param {Number} index
+     * @returns {HTMLElement|undefined}
+     * @memberof AppropriateObject
+     */
     get(index) {
         return this.length > 0 ? this[index] : undefined;
     }
 
+    /**
+     * Get or set the current value of the first element in a set of elements.
+     *
+     * @param {Number|String} [val] - The value that you go to assign to him.
+     * @returns {AppropriateObject|String|Number} - The current instance of
+     * AppropriateObject or The Value of HTML object.
+     * @memberof AppropriateObject
+     */
     value(val) {
         if (val) {
             this.forEach((element) => {
@@ -85,6 +203,12 @@ class AppropriateObject extends Array {
         }
     }
 
+    /**
+     * Go to next element.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     next() {
         return this.map((element) => {
             return element.nextElementSibling;
@@ -93,6 +217,12 @@ class AppropriateObject extends Array {
         });
     }
 
+    /**
+     * Go to previous element.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     prev() {
         return this.map((element) => {
             return element.previousElementSibling;
@@ -101,6 +231,14 @@ class AppropriateObject extends Array {
         });
     }
 
+    /**
+     * Adds a class to the selected elements.
+     *
+     * @param {String} className - The name of class that is passed to
+     * the function.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     addClass(className) {
         this.forEach((element) => {
             element.classList.add(className);
@@ -108,6 +246,14 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Removes a class from the selected elements.
+     *
+     * @param {string} className - The name of class that is passed to
+     * the function.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     removeClass(className) {
         this.forEach((element) => {
             element.classList.remove(className);
@@ -115,6 +261,15 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Return true If all elements in the collection have this class, otherwise
+     * false.
+     *
+     * @param {String} className - The name of class that is passed to
+     * the function.
+     * @returns {boolean}
+     * @memberof AppropriateObject
+     */
     hasClass(className) {
         let allHaveClass = Array.from(this).every((element) => {
             return element.classList.contains(className);
@@ -122,6 +277,13 @@ class AppropriateObject extends Array {
         return allHaveClass;
     }
 
+    /**
+     * Toggle the class in selected elements.
+     *
+     * @param {String} className
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     toggleClass(className) {
         this.forEach((element) => {
             element.classList.toggle(className);
@@ -129,6 +291,14 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Get or Set style for collection of elements.
+     *
+     * @param {String} property - The CSS property.
+     * @param {String|Number} value - The CSS value of property.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     style(property, value) {
         if (value) {
             const camelCaseProperty = property.replace(/(-[a-z])/, (prop) => {
@@ -146,14 +316,34 @@ class AppropriateObject extends Array {
         }
     }
 
+    /**
+     * Get first element of collection, but wrapper by AppropriateObject.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     first() {
         return new AppropriateObject(this[0]);
     }
 
+    /**
+     * Get last element of collection, but wrapper by AppropriateObject.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     last() {
         return new AppropriateObject(this[this.length - 1]);
     }
 
+    /**
+     * Set or get innerText of element or undefined.
+     *
+     * @param {String} message - The text for innerText.
+     * @returns {AppropriateObject|String|undefined} - The current instance of
+     * AppropriateObject or innerText.
+     * @memberof AppropriateObject
+     */
     text(message) {
         if (message) {
             this.forEach((element) => {
@@ -165,6 +355,14 @@ class AppropriateObject extends Array {
         }
     }
 
+    /**
+     * Set or get innerHTML of element or undefined.
+     *
+     * @param {String} HTML - The text for innerHTML.
+     * @returns {AppropriateObject|String|undefined} - The current instance of
+     * AppropriateObject or innerHTML.
+     * @memberof AppropriateObject
+     */
     html(HTML) {
         if (HTML) {
             this.forEach((element) => {
@@ -176,59 +374,145 @@ class AppropriateObject extends Array {
         }
     }
 
-    append(element) {
+    /**
+     * Insert content to the end of each element
+     * in the collection of elements.
+     *
+     * @param {String} content - The content to insert.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
+    append(content) {
         this.forEach((elem) => {
-            elem.insertAdjacentHTML("beforeend", element);
+            elem.insertAdjacentHTML("beforeend", content);
         });
         return this;
     }
 
-    prepend(element) {
+    /**
+     * Insert content to the start of each element
+     * in the collection of elements.
+     *
+     * @param {String} content - The content to insert.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
+    prepend(content) {
         this.forEach((elem) => {
-            elem.insertAdjacentHTML("afterbegin", element);
+            elem.insertAdjacentHTML("afterbegin", content);
         });
         return this;
     }
 
-    after(element) {
+    /**
+     * Insert content after each element in the collection of elements.
+     *
+     * @param {String} content - The content to insert.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
+    after(content) {
         this.forEach((elem) => {
-            elem.insertAdjacentHTML("afterend", element);
+            elem.insertAdjacentHTML("afterend", content);
         });
+        return this;
     }
 
-    before(element) {
+    /**
+     * Insert content before each element in the collection of elements.
+     *
+     * @param {String} content - The content to insert.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
+    before(content) {
         this.forEach((elem) => {
-            elem.insertAdjacentHTML("beforebegin", element);
+            elem.insertAdjacentHTML("beforebegin", content);
         });
+        return this;
     }
 
+    /**
+     * Get parent HTML object wrapper by AppropriateObject.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     parent() {
         const parent = this[0].parentElement;
         return new AppropriateObject(parent);
     }
 
+    /**
+     * Get children HTML objects wrapper by AppropriateObject.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     children() {
         // Getting all child elements as an array.
         const children = Array.from(this[0].children);
         return new AppropriateObject(children);
     }
 
+    /**
+     * Find first HTML object by specified CSS selector (wrapper by
+     * AppropriateObject)
+     *
+     * @param {String} selector - The specified CSS selector.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     find(selector) {
         return new AppropriateObject(this[0].querySelector(selector));
     }
 
+    /**
+     * Find all HTML objects by specified CSS selector (wrapper by
+     * AppropriateObject)
+     *
+     * @param {String} selector - The specified CSS selector.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     findAll(selector) {
         return new AppropriateObject(this[0].querySelectorAll(selector));
     }
 
+    /**
+     * Find first HTML object by specified CSS selector (NOT wrapper by
+     * AppropriateObject)
+     *
+     * @param {String} selector - The specified CSS selector.
+     * @returns {HTMLElement} - The HTML object.
+     * @memberof AppropriateObject
+     */
     findElement(selector) {
         return this[0].querySelector(selector);
     }
 
+    /**
+     * Find all HTML objects by specified CSS selector (NOT wrapper by
+     * AppropriateObject)
+     *
+     * @param {String} selector - The specified CSS selector.
+     * @returns {HTMLElement[]} - The HTML objects.
+     * @memberof AppropriateObject
+     */
     findAllElements(selector) {
         return this[0].querySelectorAll(selector);
     }
 
+    /**
+     * Play 'Fade In' Animation.
+     *
+     * @param {Number} [durationInMS=500] - A duration in milliseconds that
+     * specifies the duration of the animation.
+     * @param {Function} [callback=() => {}] - A callback function that will be
+     * called after the animation has completed.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     fadeIn(durationInMS = 500, callback = () => {}) {
         this.forEach((element) => {
             element.style.opacity = 0;
@@ -249,6 +533,16 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Play 'Fade Out' Animation.
+     *
+     * @param {Number} [durationInMS=500] - A duration in milliseconds that
+     * specifies the duration of the animation.
+     * @param {Function} [callback=() => {}] - A callback function that will be
+     * called after the animation has completed.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     fadeOut(durationInMS = 500, callback = () => {}) {
         this.forEach((element) => {
             element.style.opacity = 1;
@@ -264,6 +558,12 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Hide The HTML Element.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     hide() {
         this.forEach((element) => {
             element.style.visibility = "hidden";
@@ -271,6 +571,12 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Show The HTML Element.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     show() {
         this.forEach((element) => {
             element.style.visibility = "visible";
@@ -278,6 +584,12 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Clear innerHTML of The HTML Element.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     clear() {
         this.forEach((element) => {
             element.innerHTML = "";
@@ -285,6 +597,12 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Remove The HTML Element.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     remove() {
         this.forEach((element) => {
             if (element instanceof Element) {
@@ -294,6 +612,12 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Set 'display = "none"' for The HTML Element.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     none() {
         this.forEach((element) => {
             element.style.display = "none";
@@ -301,6 +625,12 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Set 'display = "block"' for The HTML Element.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     block() {
         this.forEach((element) => {
             element.style.display = "block";
@@ -308,6 +638,12 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Set 'display = "inline"' for The HTML Element.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     inline() {
         this.forEach((element) => {
             element.style.display = "inline";
@@ -315,6 +651,12 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Set 'display = "inline-block"' for The HTML Element.
+     *
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     inlineBlock() {
         this.forEach((element) => {
             element.style.display = "inline-block";
@@ -322,6 +664,16 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Play 'slide In' Animation.
+     *
+     * @param {Number} [durationInMS=500] - A duration in milliseconds that
+     * specifies the duration of the animation.
+     * @param {Function} [callback=() => {}] - A callback function that will be
+     * called after the animation has completed.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     slideUp(durationInMS = 500, callback = () => {}) {
         this.forEach((element) => {
             element.style.overflow = "hidden";
@@ -342,6 +694,16 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Play 'slide Down' Animation.
+     *
+     * @param {Number} [durationInMS=500] - A duration in milliseconds that
+     * specifies the duration of the animation.
+     * @param {Function} [callback=() => {}] - A callback function that will be
+     * called after the animation has completed.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     slideDown(durationInMS = 500, callback = () => {}) {
         this.forEach((element) => {
             // Remove "display: none" if it was set.
@@ -373,11 +735,26 @@ class AppropriateObject extends Array {
         return this;
     }
 
+    /**
+     * Iterate over an AppropriateObject.
+     *
+     * @param {Function} callback
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     each(callback) {
         this.forEach(callback);
         return this;
     }
 
+    /**
+     * Get or set the value of a property.
+     *
+     * @param {String} propertyName - The name of the property to set.
+     * @param {Any} [value] - A value to set for the property (optional).
+     * @returns {Any|undefined} - The value of a property or undefined (if set).
+     * @memberof AppropriateObject
+     */
     property(propertyName, value) {
         this.forEach((element) => {
             if (value === undefined) {
@@ -388,6 +765,15 @@ class AppropriateObject extends Array {
         });
     }
 
+    /**
+     * Get or set the value of an attribute.
+     *
+     * @param {String} key - The key of the attribute to set.
+     * @param {Any} [value] - A value to set for the attribute (optional).
+     * @returns {Any|undefined} - The value of an attribute or undefined
+     * (if set).
+     * @memberof AppropriateObject
+     */
     attribute(key, value) {
         if (value) {
             this.forEach((element) => {
@@ -398,6 +784,18 @@ class AppropriateObject extends Array {
         }
     }
 
+    /**
+     * Perform a custom animation of a set of CSS properties.
+     *
+     * @param {Object} properties - An object of CSS properties and values that
+     * the animation will move toward.
+     * @param {Number} [durationInMS=500] - A duration in milliseconds that
+     * specifies the duration of the animation.
+     * @param {Function} [callback=() => {}] - A callback function that will be
+     * called after the animation has completed.
+     * @returns {AppropriateObject} - The current instance of AppropriateObject.
+     * @memberof AppropriateObject
+     */
     animate(properties, durationInMS = 500, callback = () => {}) {
         this.forEach((element) => {
             const start = performance.now();
@@ -434,7 +832,15 @@ class AppropriateObject extends Array {
     }
 }
 
-const appropriate = function (params) {
+/**
+ * Takes a string containing a CSS selector, which is then used to match
+ * a collection of elements.
+ *
+ * @param {String|Element|Document} params - The CSS selector or Element or
+ * Document
+ * @returns {AppropriateObject} - The instance of AppropriateObject.
+ */
+const createAppropriateObject = function (params) {
     if (typeof params === "string" || params instanceof String) {
         return new AppropriateObject(...document.querySelectorAll(params));
     } else {
@@ -442,10 +848,52 @@ const appropriate = function (params) {
     }
 };
 
-const select = appropriate;
-const $ = appropriate;
+/**
+ * Alias to createAppropriateObject
+ * @alias createAppropriateObject
+ */
+const select = createAppropriateObject;
 
+/**
+ * Alias to createAppropriateObject
+ * @alias createAppropriateObject
+ */
+const $ = createAppropriateObject;
+
+/**
+ * @namespace requests
+ */
 const requests = {
+    /**
+     * Perform a GET request.
+     *
+     * @function
+     * @memberof requests
+     * @param {Object} options - Options for the GET request.
+     * @param {string} options.url - The URL to send the request to.
+     * @param {boolean} [options.echo=false] - Whether to log errors to the
+     * console.
+     * @param {Object} [options.data={}] - Data to be sent as query parameters.
+     * @param {string} [options.mode="cors"] - The mode of the request.
+     * @param {string} [options.cache="default"] - The cache mode of the
+     * request.
+     * @param {Object} [options.headers={}] - Headers to be sent with the
+     * request.
+     * @param {string} [options.credentials="same-origin"] - The credentials
+     * mode of the request.
+     * @param {string} [options.redirect="follow"] - The redirect mode of the
+     * request.
+     * @param {string} [options.referrerPolicy="no-referrer"] - The referrer
+     * policy of the request.
+     * @param {Function} [options.beforeSend] - Function to be called before
+     * sending the request.
+     * @param {Function} [options.success] - Function to be called on a
+     * successful response.
+     * @param {Function} [options.except] - Function to be called on an error
+     * response.
+     * @param {Function} [options.always] - Function to be called after the
+     * request is completed.
+     */
     get: ({
         url,
         echo = false,
@@ -501,6 +949,28 @@ const requests = {
                 always();
             });
     },
+
+    /**
+     * Perform a JSON request.
+     *
+     * @function
+     * @memberof requests
+     * @param {Object} options - Options for the JSON request.
+     * @param {string} options.url - The URL to send the request to.
+     * @param {string} [options.method="POST"] - The HTTP method to use for the request.
+     * @param {Object} [options.data={}] - Data to be sent in the request body.
+     * @param {boolean} [options.echo=false] - Whether to log errors to the console.
+     * @param {string} [options.mode="cors"] - The mode of the request.
+     * @param {string} [options.cache="default"] - The cache mode of the request.
+     * @param {Object} [options.headers={}] - Headers to be sent with the request.
+     * @param {string} [options.credentials="same-origin"] - The credentials mode of the request.
+     * @param {string} [options.redirect="follow"] - The redirect mode of the request.
+     * @param {string} [options.referrerPolicy="no-referrer"] - The referrer policy of the request.
+     * @param {Function} [options.beforeSend] - Function to be called before sending the request.
+     * @param {Function} [options.success] - Function to be called on a successful response.
+     * @param {Function} [options.except] - Function to be called on an error response.
+     * @param {Function} [options.always] - Function to be called after the request is completed.
+     */
     json: ({
         url,
         method = "POST",
@@ -553,6 +1023,39 @@ const requests = {
                 always();
             });
     },
+
+    /**
+     * Perform a form request.
+     *
+     * @function
+     * @memberof requests
+     * @param {Object} options - Options for the form request.
+     * @param {string} options.url - The URL to send the request to.
+     * @param {string} [options.method="POST"] - The HTTP method to use for the
+     * request.
+     * @param {Object} [options.data={}] - Data to be sent in the request body.
+     * @param {boolean} [options.echo=false] - Whether to log errors to the
+     * console.
+     * @param {string} [options.mode="cors"] - The mode of the request.
+     * @param {string} [options.cache="default"] - The cache mode of the
+     * request.
+     * @param {Object} [options.headers={}] - Headers to be sent with the
+     * request.
+     * @param {string} [options.credentials="same-origin"] - The credentials
+     * mode of the request.
+     * @param {string} [options.redirect="follow"] - The redirect mode of the
+     * request.
+     * @param {string} [options.referrerPolicy="no-referrer"] - The referrer
+     * policy of the request.
+     * @param {Function} [options.beforeSend] - Function to be called before
+     * sending the request.
+     * @param {Function} [options.success] - Function to be called on a
+     * successful response.
+     * @param {Function} [options.except] - Function to be called on an error
+     * response.
+     * @param {Function} [options.always] - Function to be called after the
+     * request is completed.
+     */
     form: ({
         url,
         method = "POST",
