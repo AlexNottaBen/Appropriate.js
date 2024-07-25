@@ -1,0 +1,444 @@
+{
+    "Appropriate.js - select": {
+        "scope": "javascript,typescript",
+        "prefix": "select(",
+        "body": [
+            "select(${1:param})$2",
+        ],
+        "description": "Appropriate.js -> select is alias to createAppropriateObject"
+    },
+    "Appropriate.js - AppropriateObject.onready": {
+        "scope": "javascript,typescript",
+        "prefix": ".onready(",
+        "body": [
+            ".onready(() => {${1}})$2",
+        ],
+        "description": "AppropriateObject.onready -> A method that will execute the passed function when the DOM is fully loaded."
+    },
+    "Appropriate.js - AppropriateObject.onload": {
+        "scope": "javascript,typescript",
+        "prefix": ".onload(",
+        "body": [
+            ".onload((event) => {${1}})$2",
+        ],
+        "description": "AppropriateObject.onload -> Bind an event handler to the \"load\" event."
+    },
+    "Appropriate.js - AppropriateObject.onclick": {
+        "scope": "javascript,typescript",
+        "prefix": ".onclick(",
+        "body": [
+            ".onclick((event) => {${1}})$2",
+        ],
+        "description": "AppropriateObject.onclick -> Bind an event handler to the \"click\" event."
+    },
+    "Appropriate.js - AppropriateObject.onmouseover": {
+        "scope": "javascript,typescript",
+        "prefix": ".onmouseover(",
+        "body": [
+            ".onmouseover((event) => {${1}})$2",
+        ],
+        "description": "AppropriateObject.onmouseover -> Bind an event handler to the \"mouseover\" event."
+    },
+    "Appropriate.js - AppropriateObject.onmouseout": {
+        "scope": "javascript,typescript",
+        "prefix": ".onmouseout(",
+        "body": [
+            ".onmouseout((event) => {${1}})$2",
+        ],
+        "description": "AppropriateObject.onmouseout -> Bind an event handler to the \"mouseout\" event."
+    },
+    "Appropriate.js - AppropriateObject.onsubmit": {
+        "scope": "javascript,typescript",
+        "prefix": ".onsubmit(",
+        "body": [
+            ".onsubmit((event) => {${1}})$2",
+        ],
+        "description": "AppropriateObject.onsubmit -> Bind an event handler to the \"mouseout\" event."
+    },
+    "Appropriate.js - AppropriateObject.on": {
+        "scope": "javascript,typescript",
+        "prefix": ".on(",
+        "body": [
+            ".on(${1:eventName}, (event) => {${2}})$3",
+        ],
+        "description": "AppropriateObject.on -> Bind an event handler to the event that is passed to the function."
+    },
+    "Appropriate.js - AppropriateObject.listen": {
+        "scope": "javascript,typescript",
+        "prefix": ".listen(",
+        "body": [
+            ".listen(${1:eventName}, ${2:selector}, (event) => {${3}})$4",
+        ],
+        "description": "AppropriateObject.listen -> Bind an event handler to HTML objects using a CSS selector."
+    },
+    "Appropriate.js - AppropriateObject.blur": {
+        "scope": "javascript,typescript",
+        "prefix": ".blur(",
+        "body": [
+            ".blur()$1",
+        ],
+        "description": "AppropriateObject.blur -> Blur HTML objects."
+    },
+    "Appropriate.js - AppropriateObject.focus": {
+        "scope": "javascript,typescript",
+        "prefix": ".focus(",
+        "body": [
+            ".focus()$1",
+        ],
+        "description": "AppropriateObject.focus -> Focus HTML objects."
+    },
+    "Appropriate.js - AppropriateObject.get": {
+        "scope": "javascript,typescript",
+        "prefix": ".get(",
+        "body": [
+            ".get(${1:index})$2",
+        ],
+        "description": "AppropriateObject.get -> Get HTML object from collection by index or undefined."
+    },
+    "Appropriate.js - AppropriateObject.value": {
+        "scope": "javascript,typescript",
+        "prefix": ".value(",
+        "body": [
+            ".value(${1:val})$2",
+        ],
+        "description": "AppropriateObject.value -> Get or set the current value of the first element in a set of elements."
+    },
+    "Appropriate.js - AppropriateObject.next": {
+        "scope": "javascript,typescript",
+        "prefix": ".next(",
+        "body": [
+            ".next()$1",
+        ],
+        "description": "AppropriateObject.next -> Go to next element."
+    },
+    "Appropriate.js - AppropriateObject.addClass": {
+        "scope": "javascript,typescript",
+        "prefix": ".addClass(",
+        "body": [
+            ".addClass(${1:className})$2",
+        ],
+        "description": "AppropriateObject.addClass -> Adds a class to the selected elements."
+    },
+    "Appropriate.js - AppropriateObject.removeClass": {
+        "scope": "javascript,typescript",
+        "prefix": ".removeClass(",
+        "body": [
+            ".removeClass(${1:className})$2",
+        ],
+        "description": "AppropriateObject.removeClass -> Removes a class from the selected elements."
+    },
+    "Appropriate.js - AppropriateObject.hasClass": {
+        "scope": "javascript,typescript",
+        "prefix": ".hasClass(",
+        "body": [
+            ".hasClass(${1:className})$2",
+        ],
+        "description": "AppropriateObject.hasClass -> Removes a class from the selected elements."
+    },
+    "Appropriate.js - AppropriateObject.toggleClass": {
+        "scope": "javascript,typescript",
+        "prefix": ".toggleClass(",
+        "body": [
+            ".toggleClass(${1:className})$2",
+        ],
+        "description": "AppropriateObject.toggleClass -> Toggle the class in selected elements."
+    },
+    "Appropriate.js - AppropriateObject.style": {
+        "scope": "javascript,typescript",
+        "prefix": ".style(",
+        "body": [
+            ".style(${1:property}, ${2:value})$3",
+        ],
+        "description": "AppropriateObject.style -> Get or Set style for collection of elements."
+    },
+    "Appropriate.js - AppropriateObject.first": {
+        "scope": "javascript,typescript",
+        "prefix": ".first(",
+        "body": [
+            ".first()$1",
+        ],
+        "description": "AppropriateObject.first -> Get first element of collection, but wrapper by AppropriateObject."
+    },
+    "Appropriate.js - AppropriateObject.last": {
+        "scope": "javascript,typescript",
+        "prefix": ".last(",
+        "body": [
+            ".last()$1",
+        ],
+        "description": "AppropriateObject.last -> Get last element of collection, but wrapper by AppropriateObject."
+    },
+    "Appropriate.js - AppropriateObject.text": {
+        "scope": "javascript,typescript",
+        "prefix": ".text(",
+        "body": [
+            ".text(${1:message})$2",
+        ],
+        "description": "AppropriateObject.text -> Set or get innerText of element or undefined."
+    },
+    "Appropriate.js - AppropriateObject.html": {
+        "scope": "javascript,typescript",
+        "prefix": ".html(",
+        "body": [
+            ".html(${1:HTML})$2",
+        ],
+        "description": "AppropriateObject.html -> Set or get innerHTML of element or undefined."
+    },
+    "Appropriate.js - AppropriateObject.append": {
+        "scope": "javascript,typescript",
+        "prefix": ".append(",
+        "body": [
+            ".append(${1:content})$2",
+        ],
+        "description": "AppropriateObject.append -> Insert content to the end of each element in the collection of elements."
+    },
+    "Appropriate.js - AppropriateObject.prepend": {
+        "scope": "javascript,typescript",
+        "prefix": ".prepend(",
+        "body": [
+            ".prepend(${1:content})$2",
+        ],
+        "description": "AppropriateObject.prepend -> Insert content to the start of each element in the collection of elements."
+    },
+    "Appropriate.js - AppropriateObject.after": {
+        "scope": "javascript,typescript",
+        "prefix": ".after(",
+        "body": [
+            ".after(${1:content})$2",
+        ],
+        "description": "AppropriateObject.after -> Insert content after each element in the collection of elements."
+    },
+    "Appropriate.js - AppropriateObject.before": {
+        "scope": "javascript,typescript",
+        "prefix": ".before(",
+        "body": [
+            ".before(${1:content})$2",
+        ],
+        "description": "AppropriateObject.before -> Insert content before each element in the collection of elements."
+    },
+    "Appropriate.js - AppropriateObject.parent": {
+        "scope": "javascript,typescript",
+        "prefix": ".parent(",
+        "body": [
+            ".parent()$1",
+        ],
+        "description": "AppropriateObject.parent -> Get parent HTML object wrapper by AppropriateObject."
+    },
+    "Appropriate.js - AppropriateObject.children": {
+        "scope": "javascript,typescript",
+        "prefix": ".children(",
+        "body": [
+            ".children()$1",
+        ],
+        "description": "AppropriateObject.children -> Get children HTML objects wrapper by AppropriateObject."
+    },
+    "Appropriate.js - AppropriateObject.find": {
+        "scope": "javascript,typescript",
+        "prefix": ".find(",
+        "body": [
+            ".find(${1:selector})$2",
+        ],
+        "description": "AppropriateObject.find -> Find first HTML object by specified CSS selector (wrapper by AppropriateObject)"
+    },
+    "Appropriate.js - AppropriateObject.findAll": {
+        "scope": "javascript,typescript",
+        "prefix": ".findAll(",
+        "body": [
+            ".findAll(${1:selector})$2",
+        ],
+        "description": "AppropriateObject.findAll -> Find all HTML objects by specified CSS selector (wrapper by AppropriateObject)"
+    },
+    "Appropriate.js - AppropriateObject.findElement": {
+        "scope": "javascript,typescript",
+        "prefix": ".findElement(",
+        "body": [
+            ".findElement(${1:selector})$2",
+        ],
+        "description": "AppropriateObject.findElement -> Find all HTML objects by specified CSS selector (NOT wrapper by AppropriateObject)"
+    },
+    "Appropriate.js - AppropriateObject.findAllElements": {
+        "scope": "javascript,typescript",
+        "prefix": ".findAllElements(",
+        "body": [
+            ".findAllElements(${1:selector})$2",
+        ],
+        "description": "AppropriateObject.findAllElements -> Find all HTML objects by specified CSS selector (NOT wrapper by AppropriateObject)"
+    },
+    "Appropriate.js - AppropriateObject.fadeIn": {
+        "scope": "javascript,typescript",
+        "prefix": ".fadeIn(",
+        "body": [
+            ".fadeIn(${1:durationInMS}, ${2:callback})$3",
+        ],
+        "description": "AppropriateObject.fadeIn -> Play 'Fade In' Animation."
+    },
+    "Appropriate.js - AppropriateObject.fadeOut": {
+        "scope": "javascript,typescript",
+        "prefix": ".fadeOut(",
+        "body": [
+            ".fadeOut(${1:durationInMS}, ${2:callback})$3",
+        ],
+        "description": "AppropriateObject.fadeOut -> Play 'Fade Out' Animation."
+    },
+    "Appropriate.js - AppropriateObject.hide": {
+        "scope": "javascript,typescript",
+        "prefix": ".hide(",
+        "body": [
+            ".hide()$1",
+        ],
+        "description": "AppropriateObject.hide -> Hide The HTML Element."
+    },
+    "Appropriate.js - AppropriateObject.show": {
+        "scope": "javascript,typescript",
+        "prefix": ".show(",
+        "body": [
+            ".show()$1",
+        ],
+        "description": "AppropriateObject.show -> Show The HTML Element."
+    },
+    "Appropriate.js - AppropriateObject.clear": {
+        "scope": "javascript,typescript",
+        "prefix": ".clear(",
+        "body": [
+            ".clear()$1",
+        ],
+        "description": "AppropriateObject.clear -> Clear innerHTML of The HTML Element."
+    },
+    "Appropriate.js - AppropriateObject.remove": {
+        "scope": "javascript,typescript",
+        "prefix": ".remove(",
+        "body": [
+            ".remove()$1",
+        ],
+        "description": "AppropriateObject.remove -> Remove The HTML Element."
+    },
+    "Appropriate.js - AppropriateObject.none": {
+        "scope": "javascript,typescript",
+        "prefix": ".none(",
+        "body": [
+            ".none()$1",
+        ],
+        "description": "AppropriateObject.none -> Set 'display = \"none\"' for The HTML Element."
+    },
+    "Appropriate.js - AppropriateObject.block": {
+        "scope": "javascript,typescript",
+        "prefix": ".block(",
+        "body": [
+            ".block()$1",
+        ],
+        "description": "AppropriateObject.block -> Set 'display = \"block\"' for The HTML Element."
+    },
+    "Appropriate.js - AppropriateObject.inline": {
+        "scope": "javascript,typescript",
+        "prefix": ".inline(",
+        "body": [
+            ".inline()$1",
+        ],
+        "description": "AppropriateObject.inline -> Set 'display = \"inline\"' for The HTML Element."
+    },
+    "Appropriate.js - AppropriateObject.inlineBlock": {
+        "scope": "javascript,typescript",
+        "prefix": ".inlineBlock(",
+        "body": [
+            ".inlineBlock()$1",
+        ],
+        "description": "AppropriateObject.inlineBlock -> Set 'display = \"inline-block\"' for The HTML Element."
+    },
+    "Appropriate.js - AppropriateObject.slideUp": {
+        "scope": "javascript,typescript",
+        "prefix": ".slideUp(",
+        "body": [
+            ".slideUp(${1:durationInMS}, ${2:callback})$3",
+        ],
+        "description": "AppropriateObject.slideUp -> Play 'Slide Up' Animation."
+    },
+    "Appropriate.js - AppropriateObject.slideDown": {
+        "scope": "javascript,typescript",
+        "prefix": ".slideDown(",
+        "body": [
+            ".slideDown(${1:durationInMS}, ${2:callback})$3",
+        ],
+        "description": "AppropriateObject.slideDown -> Play 'Slide Down' Animation."
+    },
+    "Appropriate.js - AppropriateObject.each": {
+        "scope": "javascript,typescript",
+        "prefix": ".each(",
+        "body": [
+            ".each((element) => {$1})$2",
+        ],
+        "description": "AppropriateObject.each -> Iterate over an AppropriateObject."
+    },
+    "Appropriate.js - AppropriateObject.property": {
+        "scope": "javascript,typescript",
+        "prefix": ".property(",
+        "body": [
+            ".property(${1:propertyName}, ${2:value})$3",
+        ],
+        "description": "AppropriateObject.property -> Get or set the value of a property."
+    },
+    "Appropriate.js - AppropriateObject.attribute": {
+        "scope": "javascript,typescript",
+        "prefix": ".attribute(",
+        "body": [
+            ".attribute(${1:key}, ${2:value})$3",
+        ],
+        "description": "AppropriateObject.attribute -> Get or set the value of an attribute."
+    },
+    "Appropriate.js - AppropriateObject.animate": {
+        "scope": "javascript,typescript",
+        "prefix": ".animate(",
+        "body": [
+            ".animate(${1:properties}, ${2:durationInMS}, ${3:callback})$4",
+        ],
+        "description": "AppropriateObject.animate -> Perform a custom animation of a set of CSS properties."
+    },
+    "Appropriate.js - requests.get": {
+        "scope": "javascript,typescript",
+        "prefix": "requests.get(",
+        "body": [
+            "requests.get({",
+            "    url: '/$1',",
+            "    data: ({$2}), // It is not json data, it is args!",
+            "    echo: ${3:true},",
+            "    beforeSend: () => {$4},",
+            "    success: (data) => {$5},",
+            "    except: (error) => {$6},",
+            "})",
+            "$0",
+        ],
+        "description": "requests.get -> Perform a GET request."
+    },
+    "Appropriate.js - requests.form": {
+        "scope": "javascript,typescript",
+        "prefix": "requests.form(",
+        "body": [
+            "requests.form({",
+            "    url: '/$1',",
+            "    method: \"${2:POST}\",",
+            "    data: ({$3}), // It is not json data, it is form!",
+            "    echo: ${4:true},",
+            "    beforeSend: () => {$5},",
+            "    success: (data) => {$6},",
+            "    except: (error) => {$7},",
+            "})",
+            "$0",
+        ],
+        "description": "requests.get -> Perform a FORM request."
+    },
+    "Appropriate.js - requests.json": {
+        "scope": "javascript,typescript",
+        "prefix": "requests.json(",
+        "body": [
+            "requests.json({",
+            "    url: '/$1',",
+            "    method: \"${2:POST}\",",
+            "    data: ({$3}),",
+            "    echo: ${4:true},",
+            "    beforeSend: () => {$5},",
+            "    success: (data) => {$6},",
+            "    except: (error) => {$7},",
+            "})",
+            "$0",
+        ],
+        "description": "requests.get -> Perform a JSON request."
+    },
+}
