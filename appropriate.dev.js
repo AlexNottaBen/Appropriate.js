@@ -1,5 +1,5 @@
 /*!
- * Appropriate.js JavaScript Library v1.1.0
+ * Appropriate.js JavaScript Library v1.1.1
  * https://github.com/AlexNottaBen/Appropriate.js
  *
  * Copyright AlexNottaBen
@@ -249,7 +249,7 @@ class AppropriateObject extends Array {
     /**
      * Removes a class from the selected elements.
      *
-     * @param {string} className - The name of class that is passed to
+     * @param {String} className - The name of class that is passed to
      * the function.
      * @returns {AppropriateObject} - The current instance of AppropriateObject.
      * @memberof AppropriateObject
@@ -267,7 +267,7 @@ class AppropriateObject extends Array {
      *
      * @param {String} className - The name of class that is passed to
      * the function.
-     * @returns {boolean}
+     * @returns {Boolean}
      * @memberof AppropriateObject
      */
     hasClass(className) {
@@ -665,7 +665,7 @@ class AppropriateObject extends Array {
     }
 
     /**
-     * Play 'slide In' Animation.
+     * Play 'slide Up' Animation.
      *
      * @param {Number} [durationInMS=500] - A duration in milliseconds that
      * specifies the duration of the animation.
@@ -870,20 +870,20 @@ const requests = {
      * @function
      * @memberof requests
      * @param {Object} options - Options for the GET request.
-     * @param {string} options.url - The URL to send the request to.
-     * @param {boolean} [options.echo=false] - Whether to log errors to the
+     * @param {String} options.url - The URL to send the request to.
+     * @param {Boolean} [options.echo=false] - Whether to log errors to the
      * console.
      * @param {Object} [options.data={}] - Data to be sent as query parameters.
-     * @param {string} [options.mode="cors"] - The mode of the request.
-     * @param {string} [options.cache="default"] - The cache mode of the
+     * @param {String} [options.mode="cors"] - The mode of the request.
+     * @param {String} [options.cache="default"] - The cache mode of the
      * request.
      * @param {Object} [options.headers={}] - Headers to be sent with the
      * request.
-     * @param {string} [options.credentials="same-origin"] - The credentials
+     * @param {String} [options.credentials="same-origin"] - The credentials
      * mode of the request.
-     * @param {string} [options.redirect="follow"] - The redirect mode of the
+     * @param {String} [options.redirect="follow"] - The redirect mode of the
      * request.
-     * @param {string} [options.referrerPolicy="no-referrer"] - The referrer
+     * @param {String} [options.referrerPolicy="no-referrer"] - The referrer
      * policy of the request.
      * @param {Function} [options.beforeSend] - Function to be called before
      * sending the request.
@@ -956,16 +956,16 @@ const requests = {
      * @function
      * @memberof requests
      * @param {Object} options - Options for the JSON request.
-     * @param {string} options.url - The URL to send the request to.
-     * @param {string} [options.method="POST"] - The HTTP method to use for the request.
+     * @param {String} options.url - The URL to send the request to.
+     * @param {String} [options.method="POST"] - The HTTP method to use for the request.
      * @param {Object} [options.data={}] - Data to be sent in the request body.
-     * @param {boolean} [options.echo=false] - Whether to log errors to the console.
-     * @param {string} [options.mode="cors"] - The mode of the request.
-     * @param {string} [options.cache="default"] - The cache mode of the request.
+     * @param {Boolean} [options.echo=false] - Whether to log errors to the console.
+     * @param {String} [options.mode="cors"] - The mode of the request.
+     * @param {String} [options.cache="default"] - The cache mode of the request.
      * @param {Object} [options.headers={}] - Headers to be sent with the request.
-     * @param {string} [options.credentials="same-origin"] - The credentials mode of the request.
-     * @param {string} [options.redirect="follow"] - The redirect mode of the request.
-     * @param {string} [options.referrerPolicy="no-referrer"] - The referrer policy of the request.
+     * @param {String} [options.credentials="same-origin"] - The credentials mode of the request.
+     * @param {String} [options.redirect="follow"] - The redirect mode of the request.
+     * @param {String} [options.referrerPolicy="no-referrer"] - The referrer policy of the request.
      * @param {Function} [options.beforeSend] - Function to be called before sending the request.
      * @param {Function} [options.success] - Function to be called on a successful response.
      * @param {Function} [options.except] - Function to be called on an error response.
@@ -1030,22 +1030,22 @@ const requests = {
      * @function
      * @memberof requests
      * @param {Object} options - Options for the form request.
-     * @param {string} options.url - The URL to send the request to.
-     * @param {string} [options.method="POST"] - The HTTP method to use for the
+     * @param {String} options.url - The URL to send the request to.
+     * @param {String} [options.method="POST"] - The HTTP method to use for the
      * request.
      * @param {Object} [options.data={}] - Data to be sent in the request body.
-     * @param {boolean} [options.echo=false] - Whether to log errors to the
+     * @param {Boolean} [options.echo=false] - Whether to log errors to the
      * console.
-     * @param {string} [options.mode="cors"] - The mode of the request.
-     * @param {string} [options.cache="default"] - The cache mode of the
+     * @param {String} [options.mode="cors"] - The mode of the request.
+     * @param {String} [options.cache="default"] - The cache mode of the
      * request.
      * @param {Object} [options.headers={}] - Headers to be sent with the
      * request.
-     * @param {string} [options.credentials="same-origin"] - The credentials
+     * @param {String} [options.credentials="same-origin"] - The credentials
      * mode of the request.
-     * @param {string} [options.redirect="follow"] - The redirect mode of the
+     * @param {String} [options.redirect="follow"] - The redirect mode of the
      * request.
-     * @param {string} [options.referrerPolicy="no-referrer"] - The referrer
+     * @param {String} [options.referrerPolicy="no-referrer"] - The referrer
      * policy of the request.
      * @param {Function} [options.beforeSend] - Function to be called before
      * sending the request.

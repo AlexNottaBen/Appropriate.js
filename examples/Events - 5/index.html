@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events Example</title>
     <style>
-        header, p {
+        header,
+        p {
             padding: 5px;
             cursor: pointer;
         }
@@ -40,7 +41,7 @@
                 select(event.target).style("color", "black")
             })
 
-            select(document).listen('click','p',(event) => {
+            select(document).listen('click', 'p', (event) => {
                 select(event.target).remove()
                 select('p:last-child').after('<p>New Paragraph</p>')
             })

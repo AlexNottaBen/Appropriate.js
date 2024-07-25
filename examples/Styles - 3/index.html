@@ -29,13 +29,13 @@
     <script>
         select(document).onready(() => {
 
-            const paragraphs=select('.paragraph')
+            const paragraphs = select('.paragraph')
 
             select('.paragraph').addClass("red-alert")
 
-            for(let paragraph of paragraphs) {
-                if(Math.random()<0.5) {
-                    select(paragraph).style("background-color","blue").style("border-color","darkblue")
+            for (let paragraph of paragraphs) {
+                if (Math.random() < 0.5) {
+                    select(paragraph).style("background-color", "blue").style("border-color", "darkblue")
                 }
             }
 

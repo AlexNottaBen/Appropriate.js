@@ -29,11 +29,11 @@
     <script>
         select(document).onready(() => {
 
-            select(document).listen('click','p',(event) => {
+            select(document).listen('click', 'p', (event) => {
 
-                const target=select(event.target)
+                const target = select(event.target)
 
-                if(Math.random()<0.5) {
+                if (Math.random() < 0.5) {
                     target.slideUp(500, () => {
                         target.slideDown(500)
                     })
@@ -44,14 +44,14 @@
                 }
             })
 
-            const flyButton=select('#flybutton')
+            const flyButton = select('#flybutton')
 
             flyButton.onclick((event) => {
                 // animate(properties: Object, durationInMS?: string | number, callback?: Function)
-                flyButton.style("position","absolute").animate({
+                flyButton.style("position", "absolute").animate({
                     opacity: 0,
                     left: '800px'
-                },500,() => {
+                }, 500, () => {
                     flyButton.remove()
                     select('main').after("Animation complete!")
                 })

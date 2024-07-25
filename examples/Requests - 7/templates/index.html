@@ -32,15 +32,15 @@
         select(document).onready(() => {
             select("#form1").onsubmit((event) => {
                 event.preventDefault()
-                const form=select('form')
-                const x=form.find('[name="x"]').value()
-                const y=form.find('[name="y"]').value()
-                const dataTransfer=form.find('[name="data-transfer"]').value()
-                switch(dataTransfer) {
+                const form = select('form')
+                const x = form.find('[name="x"]').value()
+                const y = form.find('[name="y"]').value()
+                const dataTransfer = form.find('[name="data-transfer"]').value()
+                switch (dataTransfer) {
                     case "args":
                         requests.get({
                             url: "/calc",
-                            data: ({x: x,y: y}), // It is not json request, it is form!
+                            data: ({x: x, y: y}), // It is not json data, it is args!
                             echo: true,
                             beforeSend: () => {select("#result").text("Pending...")},
                             success: (data) => {select("#result").text(data)},
@@ -51,7 +51,7 @@
                         requests.form({
                             url: "/calc",
                             method: "POST",
-                            data: ({x: x,y: y}), // It is not json request, it is form!
+                            data: ({x: x, y: y}), // It is not json data, it is form!
                             echo: true,
                             beforeSend: () => {select("#result").text("Pending...")},
                             success: (data) => {select("#result").text(data)},
@@ -62,7 +62,7 @@
                         requests.json({
                             url: "/api/calc",
                             method: "POST",
-                            data: ({x: x,y: y}), // It is not json request, it is form!
+                            data: ({x: x, y: y}),
                             echo: true,
                             beforeSend: () => {select("#result").text("Pending...")},
                             success: (data) => {select("#result").text(data)},
