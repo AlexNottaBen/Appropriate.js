@@ -155,7 +155,7 @@ class AppropriateObject extends Array {
      */
     blur() {
         this.forEach((element) => {
-            element.blur()
+            element.blur();
         });
         return this;
     }
@@ -168,7 +168,7 @@ class AppropriateObject extends Array {
      */
     focus() {
         this.forEach((element) => {
-            element.focus()
+            element.focus();
         });
         return this;
     }
